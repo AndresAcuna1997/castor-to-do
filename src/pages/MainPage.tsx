@@ -3,6 +3,7 @@ import { EditToDo, ToDoItem, NavBar, Loading } from '../components';
 import { useForm } from '../hooks';
 import { useToDoStore } from '../stores/toDo/toDo.store';
 import { useDialog } from '../hooks/useDialog';
+import { toast } from 'sonner';
 
 const INITIAL_STATE = {
   toDoTitle: '',
@@ -27,14 +28,13 @@ export const MainPage = () => {
     const { toDoTitle, toDoDescription } = valueForm;
     try {
       await addToDo( toDoTitle, toDoDescription );
+      toast.success( 'To-Do added' );
       resetForm();
     } catch ( error ) {
-      console.log( error );
+      toast.error( 'Error adding To-Do' );
     }
 
   };
-
-
 
   useEffect( () => {
     getToDos();
@@ -52,7 +52,7 @@ export const MainPage = () => {
         <EditToDo toogleDialog={ toogleDialog } />
       </dialog>
 
-      <main className="flex flex-col items-center mt-9 h-screen">
+      <main className="flex flex-col items-center pt-9 h-screen bg-slate-200">
         <form onSubmit={ handleSubmit } className="mb-4">
           <input
             type="text"

@@ -20,7 +20,7 @@ const storeApi: StateCreator<ToDoState> = ( set, get ) => ( {
   toDoList: [],
   isLoading: false,
   selectedStatus: 'all',
-  beginEditToDo: { id: '1', title: '1', description: '', status: '', date: '' },
+  beginEditToDo: { id: '', title: '', description: '', status: '', date: '' },
   getToDos: async () => {
     try {
       set( { isLoading: true } );

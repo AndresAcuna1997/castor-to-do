@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'sonner';
 import { useToDoStore } from '../../stores/toDo/toDo.store';
 
 interface Props {
@@ -29,8 +30,23 @@ export const ToDoItem = ( { id, status, title, date, description, toogleDialog }
     toogleDialog();
   };
 
-  const handleDelete = () => {
-    deleteToDo( id );
+  const handleDelete = async () => {
+    try {
+      await deleteToDo( id );
+
+      toast.success( 'To-Do deleted' );
+    } catch ( error ) {
+      toast.error( 'Error deleting To-Do' );
+    }
+  };
+
+  const changeStatus = async ( newStatus: string ) => {
+    try {
+      await changeToDoStatus( id, newStatus );
+      toast.success( 'To-Do state updated' );
+    } catch ( error ) {
+      toast.error( 'Error updating To-Do' );
+    }
   };
 
   const handleCheckboxChange = () => {
@@ -41,10 +57,11 @@ export const ToDoItem = ( { id, status, title, date, description, toogleDialog }
       } else {
         newStatus = 'completed';
       }
-      changeToDoStatus( id, newStatus );
+      changeStatus( newStatus );
       return newStatus;
     } );
   };
+
 
   return (
     <div className={ `${ checkStatus === 'completed' ? 'bg-green-400' : 'bg-yellow-400' } w-64 min-h-64 flex flex-col justify-between  rounded-lg border  mb-6 py-5 px-4` }>

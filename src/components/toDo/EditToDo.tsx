@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 import { useToDoStore } from '../../stores/toDo/toDo.store';
 import { useForm } from '../../hooks';
 
@@ -22,9 +23,12 @@ export const EditToDo = ( { toogleDialog }: Props ) => {
     try {
       await updateToDo( id, status, title, description );
       toogleDialog();
+
+      toast.success( 'To-Do Edited' );
+
     } catch ( error ) {
 
-      throw new Error( "Error updating document" );
+      toast.error( "Error updating document" );
     }
   };
 
