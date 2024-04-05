@@ -23,5 +23,6 @@ To run this project on your local machine, you will need:
 To run the project on your local machine, use the following command:
 
 ```bash
-npm start
+npm run dev
 ```
+Open the link shown in the console
