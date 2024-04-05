@@ -16,18 +16,7 @@ To run this project on your local machine, you will need:
 
 3. Install the project dependencies using `npm install`.
 
-4. Create a `.env` file at the root of the project and add the following environment variables with your respective Firebase configuration values:
-
-```
-REACT_APP_FIREBASE_API_KEY=<your_api_key>
-REACT_APP_FIREBASE_AUTH_DOMAIN=<your_auth_domain>
-REACT_APP_FIREBASE_PROJECT_ID=<your_project_id>
-REACT_APP_FIREBASE_STORAGE_BUCKET=<your_storage_bucket>
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<your_messaging_sender_id>
-REACT_APP_FIREBASE_APP_ID=<your_app_id>
-```
-
-### There will be a file with the actual enviroment variables provided in the email, so you can use the application
+## NOTE: The inclusion of the .env file in the repository aims to streamline app execution. However, it's crucial to note that in a real project, this practice should be avoided.
 
 ## Running
 
