@@ -36,8 +36,17 @@ export const MainPage = () => {
 
   };
 
+  const fetchToDos = async () => {
+    try {
+      await getToDos();
+    } catch ( error ) {
+      toast.error( 'Error getting To-Dos' );
+    }
+  };
+
+
   useEffect( () => {
-    getToDos();
+    fetchToDos();
   }, [] );
 
   useEffect( () => {
