@@ -33,11 +33,11 @@ export const EditToDo = ( { toogleDialog }: Props ) => {
   };
 
   const handleSelectChange = ( e ) => {
+    const newStatus = e.target.value;
+    setSelect( newStatus );
     setNewValueForm( ( prev ) => {
-      setSelect( e.target.value );
-      return { ...prev, status: e.target.value };
+      return { ...prev, status: newStatus };
     } );
-
   };
 
   useEffect( () => {
