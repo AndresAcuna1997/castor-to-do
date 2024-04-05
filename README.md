@@ -20,14 +20,14 @@ To run this project on your local machine, you will need:
 
 ## Running
 
-To run the project on your local machine, use the following command:
+1. To run the project on your local machine, use the following command:
 
 ```bash
 npm run dev
 ```
-Open the link shown in the console
+2. Open the link shown in the console
 
-To access the application, you'll need to create an account. You can use a fake email address like `abcd@xyz.com` and a password such as `123456`. Please ensure that your password is at least 6 characters long, as per Fireauth restrictions.
+3. To access the application, you'll need to create an account. You can use a fake email address like `abcd@xyz.com` and a password such as `123456`. Please ensure that your password is at least 6 characters long, as per Fireauth restrictions.
 
 If you dont want to create an account you can use the following credentails to log in:
 
