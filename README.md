@@ -32,4 +32,5 @@ To access the application, you'll need to create an account. You can use a fake 
 If you dont want to create an account you can use the following credentails to log in:
 
 > email: test@test.test
+> 
 > password: 123456
