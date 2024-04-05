@@ -27,7 +27,7 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<your_messaging_sender_id>
 REACT_APP_FIREBASE_APP_ID=<your_app_id>
 ```
 
-==There will be a file with the actual enviroment variables provided in the email, so you can use the application==
+### There will be a file with the actual enviroment variables provided in the email, so you can use the application
 
 ## Running
 
