@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const ToDoItem = ( { id, status, title, date, description, toogleDialog }: Props ) => {
-  const [ checkStatus, setcheckStatus ] = useState( status );
+  const [ checkStatus, setCheckStatus ] = useState( status );
   const deleteToDo = useToDoStore( ( state ) => state.deleteToDo );
   const changeToDoStatus = useToDoStore( ( state ) => state.updateToDo );
   const setbeginEditToDo = useToDoStore( ( state ) => state.setbeginEditToDo );
@@ -49,17 +49,14 @@ export const ToDoItem = ( { id, status, title, date, description, toogleDialog }
     }
   };
 
-  const handleCheckboxChange = () => {
-    setcheckStatus( ( prev ) => {
-      let newStatus;
-      if ( prev === 'completed' ) {
-        newStatus = 'pending';
-      } else {
-        newStatus = 'completed';
-      }
-      changeStatus( newStatus );
-      return newStatus;
-    } );
+  const handleCheckboxChange = async () => {
+    const newStatus = checkStatus === 'completed' ? 'pending' : 'completed';
+    try {
+      await changeStatus( newStatus );
+    } catch ( error ) {
+      toast.error( 'Error updating To-Do' );
+    }
+    setCheckStatus( newStatus );
   };
 
 
